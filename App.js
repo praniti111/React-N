@@ -1,5 +1,5 @@
 import React from "react"; // this react is coming from the node modules
-import { ReactDOM } from "react-dom";
+import ReactDOM from "react-dom";
 // const heading = React.createElement(
 //   "h1",
 //   { id: "title" },
@@ -69,3 +69,46 @@ import { ReactDOM } from "react-dom";
 // x(function y() {
 //   console.log("Hi Iam inside the y function");
 // });
+
+//JSX => Babel transpiles it to the React.createElement => ReactElement-JS Object => HTMLElement(render)
+const jsxHeading = <h1>Namaste React iam Learing</h1>;
+console.log(jsxHeading);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHeading);
+
+const Title = () => (
+  <h1 className="title" tabIndex="5">
+    Heyyy React
+  </h1>
+);
+
+//React is made up of components - ie. Everything in React is a component
+//There are 2 types of components - 1. Class Component, 2. Functional Component
+
+//Functional Component - is a function that returns a JSX Code
+
+//React Functional Component
+const HeadingComponent = () => {
+  return <h1>Hello World</h1>;
+};
+
+const elem = <h2>Iam elem react element and inside title</h2>;
+const title = (
+  <div>
+    {elem}
+    <h1 className="title">Iam the React Element</h1>
+  </div>
+);
+
+//This is called Component Composition
+const HeadingComp = () => (
+  <h1 className="heading">
+    <Title />
+    {title}
+    <HeadingComponent />
+    Another way same thing:o
+  </h1>
+);
+
+root.render(<HeadingComponent />);
+root.render(<HeadingComp />);
