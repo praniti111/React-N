@@ -27,7 +27,7 @@
 
 - When we have to dynamically pass in some data to a component, you pass in props
 - Passing Props is like passing arguments to a Component
-- eg. <RestaurantContainer resName="Meghana Foods" cuisine="Biryani" />
+- eg. (<RestaurantContainer resName="Meghana Foods" cuisine="Biryani" />)
 - const RestaurantContainer = (props) => {<h2>{props.resName}</h2> <h2>{props.cuisine}</h2>};
 - so here resName and cuisine are the props(arguments) which are passed to the Component RestaurantContainer
 - What React does here ?
